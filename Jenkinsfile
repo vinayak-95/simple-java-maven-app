@@ -12,7 +12,7 @@ pipeline {
             }}
         stage('Sonar analysis') {
                 steps {
-                  withSonarQubeEnv(credentialsId: 'Sonar-Token', installationName: 'sonar') {
+                  withSonarQubeEnv(credentialsId: 'Sonar-Token', installationName: 'SonarQube') {
                   sh 'sonar:sonar'
 }}
             }    
