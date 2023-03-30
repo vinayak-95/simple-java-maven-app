@@ -14,7 +14,7 @@ pipeline {
               {
                 steps {
                   withSonarQubeEnv(credentialsId: 'Sonar-Token', installationName: 'SonarQube') {
-                      sh "sonar:sonar"
+                      sh 'mvn sonar:sonar'
 }}
             }    
         }
