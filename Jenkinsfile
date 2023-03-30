@@ -14,7 +14,7 @@ pipeline {
              { environment { SCANNER_HOME = tool 'sonar-scanner' } {
                 steps {
                   withSonarQubeEnv(credentialsId: 'Sonar-Token', installationName: 'SonarQube') {
-                  sh 'sonar:sonar'
+                      sh '${SCANNER_HOME}sonar:sonar'
 }}
             }    
         }
