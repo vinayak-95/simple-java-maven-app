@@ -13,8 +13,10 @@ pipeline {
         stage('Sonar analysis') 
               {
                 steps {
-                  withSonarQubeEnv(credentialsId: 'Sonar-Token', installationName: 'SonarQube') {
-                      sh 'mvn sonar:sonar'
+           mvn clean verify sonar:sonar \
+          -Dsonar.projectKey=My-test-project \
+          -Dsonar.host.url=http://15.207.98.178:9000 \
+          -Dsonar.login=squ_90d695fa4df5189ded061fd39fe4ad69dd4321d2
 }}
             }    
         }
