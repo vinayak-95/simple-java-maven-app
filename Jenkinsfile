@@ -10,8 +10,7 @@ pipeline {
                 sh 'mvn clean package'
 }
             }}
-        stage('Sonar analysis')
-         { environment { SCANNER_HOME = tool 'sonar-scanner' } {
+        stage('Sonar analysis') {
                 steps {
                   withSonarQubeEnv(credentialsId: 'Sonar-Token', installationName: 'SonarQube') {
                   sh 'sonar:sonar'
