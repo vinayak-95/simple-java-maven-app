@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    tools { 
+      maven 'MAVEN_HOME' 
+      jdk 'JDK_HOME' 
+    }
     stages {
         stage('SCM checkout')
                 { steps { git branch : 'master', url: 'https://github.com/vinayak-95/simple-java-maven-app'}}
