@@ -9,7 +9,7 @@ pipeline {
         
         stage('Build Artifact') {
             steps {
-                withMaven(jdk: 'JDK_HOME', maven: 'Maven_Home') {
+                withMaven(jdk: 'JDK_HOME', maven: 'mvn') {
                 sh 'mvn package'
 }
 }
