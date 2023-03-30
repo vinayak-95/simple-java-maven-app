@@ -4,7 +4,6 @@ pipeline {
       maven 'Maven 3.9.1' 
       jdk 'jdk17' 
     }
-    }
     stages {
         stage('SCM checkout')
                 { steps { git branch : 'master', url: 'https://github.com/vinayak-95/simple-java-maven-app'}}
