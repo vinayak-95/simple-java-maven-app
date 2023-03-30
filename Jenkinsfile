@@ -9,13 +9,12 @@ pipeline {
                 withMaven(jdk: 'JDK_HOME', maven: 'Maven_Home') {
                 sh 'mvn clean package'
 }
-}
-            stage ('Sonar analysis') {
+            }}
+        stage('Sonar analysis') {
                 steps {
-                   withSonarQubeEnv(credentialsId: 'Sonar-Token') {
+                  withSonarQubeEnv(credentialsId: 'Sonar-Token') {
                   sh 'sonar:sonar'
 }}
             }    
         }
     }
-}
